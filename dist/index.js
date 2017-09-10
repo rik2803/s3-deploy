@@ -22,7 +22,7 @@ var _deploy = require('./deploy');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _co2.default)(regeneratorRuntime.mark(function _callee() {
+(0, _co2.default)( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
   var argv, options, globbedFiles, AWSOptions, s3Options, s3ClientOptions;
   return regeneratorRuntime.wrap(function _callee$(_context) {
     while (1) {
@@ -43,6 +43,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
           if (argv.hasOwnProperty('filePrefix')) {
             options.filePrefix = argv.filePrefix;
+          }
+
+          if (argv.hasOwnProperty('serverSideEncryption')) {
+            options.serverSideEncryption = argv.serverSideEncryption;
           }
 
           if (argv.hasOwnProperty('cache')) {
@@ -77,6 +81,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
           console.log('> Target file prefix: %s', options.filePrefix);
           console.log('> Gzip:', options.gzip);
           console.log('> Cache-Control max-age=:', options.cache);
+          console.log('> ServerSideEncryption:', options.serverSideEncryption);
           console.log('> E-Tag:', options.etag);
           console.log('> Private:', options.private ? true : false);
           if (options.ext) console.log('> Ext:', options.ext);
@@ -97,6 +102,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             };
           }
 
+          if (options.hasOwnProperty('serverSideEncryption')) {
+            s3Options.ServerSideEncryption = options.serverSideEncryption;
+          }
+
           if (options.private) {
             s3Options.ACL = 'private';
           }
@@ -109,13 +118,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
           }
 
           // Starts the deployment of all found files.
-          _context.next = 25;
+          _context.next = 28;
           return (0, _deploy.deploy)(globbedFiles, options, AWSOptions, s3Options, s3ClientOptions);
 
-        case 25:
+        case 28:
           return _context.abrupt('return', _context.sent);
 
-        case 26:
+        case 29:
         case 'end':
           return _context.stop();
       }

@@ -105,7 +105,7 @@ function sync(client, file, opts, filePrefix) {
  * If it is a file, it returns file details object.
  * Otherwise it returns undefined.
  */
-var readFile = exports.readFile = _co2.default.wrap(regeneratorRuntime.mark(function _callee(filepath, cwd, gzipFiles) {
+var readFile = exports.readFile = _co2.default.wrap( /*#__PURE__*/regeneratorRuntime.mark(function _callee(filepath, cwd, gzipFiles) {
   var stat, fileContents;
   return regeneratorRuntime.wrap(function _callee$(_context) {
     while (1) {
@@ -152,7 +152,7 @@ var readFile = exports.readFile = _co2.default.wrap(regeneratorRuntime.mark(func
  * checking if file is already in AWS bucket and needs updates,
  * and uploading files that are not there yet, or do need an update.
  */
-var handleFile = exports.handleFile = _co2.default.wrap(regeneratorRuntime.mark(function _callee2(filePath, cwd, filePrefix, client, s3Options, ext) {
+var handleFile = exports.handleFile = _co2.default.wrap( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(filePath, cwd, filePrefix, client, s3Options, ext) {
   var fileObject, fileUploadStatus;
   return regeneratorRuntime.wrap(function _callee2$(_context2) {
     while (1) {
@@ -205,7 +205,7 @@ var handleFile = exports.handleFile = _co2.default.wrap(regeneratorRuntime.mark(
  * Entry point, creates AWS client, prepares AWS options,
  * and handles all provided paths.
  */
-var deploy = exports.deploy = _co2.default.wrap(regeneratorRuntime.mark(function _callee3(files, options, AWSOptions, s3Options) {
+var deploy = exports.deploy = _co2.default.wrap( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(files, options, AWSOptions, s3Options) {
   var clientOptions = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
   var cwd, filePrefix, credentials, client;
   return regeneratorRuntime.wrap(function _callee3$(_context3) {
