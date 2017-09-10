@@ -22,6 +22,10 @@ co(function *() {
     options.filePrefix = argv.filePrefix;
   }
 
+  if(argv.hasOwnProperty('serverSideEncryption')) {
+    options.serverSideEncryption = argv.serverSideEncryption;
+  }
+
   if(argv.hasOwnProperty('cache')) {
     options.cache = argv.cache;
   }
@@ -53,6 +57,7 @@ co(function *() {
   console.log('> Target file prefix: %s', options.filePrefix);
   console.log('> Gzip:', options.gzip);
   console.log('> Cache-Control max-age=:', options.cache);
+  console.log('> ServerSideEncryption:', options.serverSideEncryption);
   console.log('> E-Tag:', options.etag);
   console.log('> Private:', options.private ? true : false);
   if (options.ext) console.log('> Ext:', options.ext);
@@ -71,6 +76,10 @@ co(function *() {
     s3Options.Metadata = {
       ETag: options.etag,
     };
+  }
+
+  if(options.hasOwnProperty('serverSideEncryption')) {
+    s3Options.ServerSideEncryption = options.serverSideEncryption;
   }
 
   if(options.private) {

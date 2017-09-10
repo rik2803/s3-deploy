@@ -1,6 +1,6 @@
 {
   "name": "s3-deploy",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "NodeJS bash utility for deploying files to Amazon S3",
   "scripts": {
     "test": "mocha",
@@ -31,7 +31,7 @@
     "babel-polyfill": "^6.7.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.6.5",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.7.2",
     "babel-eslint": "^6.0.2",
     "babel-plugin-espower": "^2.1.2",

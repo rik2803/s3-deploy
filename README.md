@@ -52,6 +52,17 @@ Use this parameter to specify that objects being uploaded will be stored with pr
 ```
 Enables to set the correct content type header when files has no extension. For example, when the s3 bucket is used for webhosting and there is need to access paths like `/about` instead of `/about.html` so its possible to upload file named `about` and set `--ext html`
 
+```
+--serverSideEncryption X
+```
+Enables *date at rest* encryption for all transferred files. Possible values are:
+* `AES256`
+* `aws:kms`
+
+Refer to the node js API documentation for the
+[`putObject`](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property) method.
+
+
 ## AWS Credentials
 AWS credentials can be provided via environment variables, or in the `~/.aws/credentials` file.  More details here:
 http://docs.aws.amazon.com/cli/latest/topic/config-vars.html. Please make sure to define a default in your AWS credentials, this will help prevent a `Missing Credentials` error during deployment.
